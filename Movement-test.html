@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>A-Frame Oculus Quest Example</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-oculus-quest-controls@3.0.0/dist/aframe-oculus-quest-controls.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity oculus-quest-controls="hand: left" movement-controls></a-entity>
+      <a-entity oculus-quest-controls="hand: right"></a-entity>
+      <a-camera wasd-controls-enabled="false"></a-camera>
+      <a-sky color="#000"></a-sky>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+    </a-scene>
+  </body>
+</html>
