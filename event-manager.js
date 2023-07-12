@@ -21,7 +21,7 @@ AFRAME.registerComponent('event-manager', {
       this.btn1ButtonEl.addEventListener('click', this.onClick);
       this.btn2ButtonEl.addEventListener('click', this.onClick);
       this.btn3ButtonEl.addEventListener('click', this.onClick);
-      this.btn1ButtonEl.addState('pressed');
+      this.boxButtonEl.addState('pressed');
     },
   
     bindMethods: function () {
