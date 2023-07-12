@@ -2,8 +2,6 @@
 
 
 **Required Items-->**
-> Latest version
+> Latest version - *Index.html*
 
-> Grass.jpg
-
-> oculus-touch-controls.js 
+> Assets - *Grass.jpg - event-manager.js - color-change.js - button.js - oculus-touch-controls.js* 
