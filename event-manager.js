@@ -4,24 +4,24 @@ AFRAME.registerComponent('event-manager', {
     init: function () {
       this.bindMethods();
   
-      this.boxGeometryEl = document.querySelector('#boxGeometry');
-      this.sphereGeometryEl = document.querySelector('#sphereGeometry');
-      this.torusGeometryEl = document.querySelector('#torusGeometry');
+      this.btn1GeometryEl = document.querySelector('#boxGeometry');
+      this.bnt2GeometryEl = document.querySelector('#boxGeometry');
+      this.btn3GeometryEl = document.querySelector('#boxGeometry');
   
-      this.boxButtonEl = document.querySelector('#boxButton');
-      this.sphereButtonEl = document.querySelector('#sphereButton');
-      this.torusButtonEl = document.querySelector('#torusButton');
+      this.btn1ButtonEl = document.querySelector('#boxButton');
+      this.btn2ButtonEl = document.querySelector('#boxButton');
+      this.btn3ButtonEl = document.querySelector('#boxButton');
   
       this.buttonToGeometry = {
-        'bnt1': this.boxGeometryEl,
-        'btn2': this.sphereGeometryEl,
-        'btn3': this.torusGeometryEl
+        'btn1': this.btn1GeometryEl,
+        'btn2': this.btn2GeometryEl,
+        'btn3': this.btn3GeometryEl
       };
   
-      this.boxButtonEl.addEventListener('click', this.onClick);
-      this.sphereButtonEl.addEventListener('click', this.onClick);
-      this.torusButtonEl.addEventListener('click', this.onClick);
-      this.boxButtonEl.addState('pressed');
+      this.btn1ButtonEl.addEventListener('click', this.onClick);
+      this.btn2ButtonEl.addEventListener('click', this.onClick);
+      this.btn3ButtonEl.addEventListener('click', this.onClick);
+      this.btn1ButtonEl.addState('pressed');
     },
   
     bindMethods: function () {
@@ -30,15 +30,16 @@ AFRAME.registerComponent('event-manager', {
   
     onClick: function (evt) {
       var targetEl = evt.target;
-      if (targetEl === this.boxButtonEl ||
-          targetEl === this.sphereButtonEl ||
-          targetEl === this.torusButtonEl) {
-        this.boxButtonEl.removeState('pressed');
-        this.sphereButtonEl.removeState('pressed');
-        this.torusButtonEl.removeState('pressed');
-        this.boxGeometryEl.object3D.visible = false;
-        this.sphereGeometryEl.object3D.visible = false;
-        this.torusGeometryEl.object3D.visible = false;
+      if (targetEl === this.btn1ButtonEl ||
+          targetEl === this.btn2ButtonEl ||
+          targetEl === this.btn3ButtonEl) {
+        this.btn1ButtonEl.removeState('pressed');
+        this.btn2ButtonEl.removeState('pressed');
+        this.btn3ButtonEl.removeState('pressed');
+        this.btn1GeometryEl.object3D.visible = false;
+        this.btn2GeometryEl.object3D.visible = false;
+        this.btn3GeometryEl.object3D.visible = false;
         this.buttonToGeometry[targetEl.id].object3D.visible = true;
           }}})
+  
   
