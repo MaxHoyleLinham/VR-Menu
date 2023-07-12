@@ -49,10 +49,11 @@
             <a-entity id="btn3" geometry="primitive: box; width: 1; depth: 0.2; height: 1" position="-1.5 2.5 -3.6" rotation="-5 0 0" material="color: #334EFF"></a-entity>
             <a-entity oculus-quest-controls="hand: left" movement-controls></a-entity>
             <a-entity laser-controls="hand: left"></a-entity>
+            <a-entity laser-controls="rightHand: right"></a-entity>
             <a-entity oculus-quest-controls="hand: right"></a-entity>
             <a-camera wasd-controls-enabled="true"></a-camera>
-            <a-sky src="#sky" transparrent="true"></a-sky>
-            <a-plane src="#ground" repeat="100 100" height="100" width="100" rotation="-90 0 0" transparrent="true"></a-plane>
+            <a-sky src="#sky" transparrent="true" hide-on-enter-ar="true"></a-sky>
+            <a-plane src="#ground" repeat="100 100" height="100" width="100" rotation="-90 0 0" transparrent="true" hide-on-enter-ar="true"></a-plane>
 <!--Text-->
             <a-text id="menu" value="Menu" color="white" tab-size="50" position="-0.3 3.5 -3.6"></a-text>
 <!--Hand Controls (Controls not working only see controllers)-->
