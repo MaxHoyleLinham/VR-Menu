@@ -35,7 +35,7 @@
       </script>
     </head>
     <body>
-        <a-scene>
+      <a-scene>
             <a-assets>
 <!--Ground Texture-->
                 <img id="ground" src="grass.jpg">
@@ -63,8 +63,9 @@
             <a-entity id="rig"></a-entity>
             <a-entity oculus-touch-controls="hand: left" oculus-thumbstick-controls></a-entity>
             <a-entity oculus-touch-controls="hand: right"></a-entity>
-            <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
-            <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
+<!-- Hands -->
+            <a-entity id="left" hand-controls="left" controller-cursor></a-entity>
+            <a-entity id="right" hand-controls="right" controller-cursor></a-entity>
      </a-scene>
     </body>
 </html>
