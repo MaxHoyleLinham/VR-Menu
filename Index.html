@@ -15,6 +15,9 @@
     <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.3/dist/aframe-controller-cursor-component.min.js"></script>
     <script src="Components/ground.js"></script>
     <script src="Components/skyGradient.js"></script>
+    <script src="Components/button.js"></script>
+    <script src="Components/color-change.js"></script>
+    <script src="Components/event-manager.js"></script>
 <!--Script for Controller movement (Not working currently)-->
     <Script src="oculus-touch-controls.js"></Script>
     <script>
@@ -41,29 +44,28 @@
                 <a-glft-model src="left.glb"></a-glft-model>
             </a-assets>
 <!--Shapes-->
-            <a-entity id="menu" geometry="primitive: box; width: 5; depth: 0.5; height: 3" position="0 2.5 -4" rotation="-5 0 0" material="color: #7C7C7C"></a-entity>
-            <a-entity id="slidebar" geometry="primitive: box; width: 4; depth: 0.2; height: 0.2" position="0 1.5 -3.6" rotation="-5 0 0" material="color: #E7CA18"></a-entity>
-            <a-entity id="knob" geometry="primitive: cylinder; width: 0.1; depth: 0.1; height: 0.25; radius: 0.25" position="0 1.5 -3.5" rotation="-95 0 0 " material="color: #334EFF"></a-entity>
-            <a-entity id="btn1" geometry="primitive: box; width: 1; depth: 0.2; height: 1" position="0 2.5 -3.6" rotation="-5 0 0" material="color: #334EFF"></a-entity>
-            <a-entity id="btn2" geometry="primitive: box; width: 1; depth: 0.2; height: 1" position="1.5 2.5 -3.6" rotation="-5 0 0" material="color: #334EFF"></a-entity>
-            <a-entity id="btn3" geometry="primitive: box; width: 1; depth: 0.2; height: 1" position="-1.5 2.5 -3.6" rotation="-5 0 0" material="color: #334EFF"></a-entity>
+            <a-entity id="menu" geometry="primitive: box; width: 2; depth: 0.25; height: 1" position="0 1.5 -1.15" rotation="-5 0 0" material="color: #7C7C7C"></a-entity>
+            <a-entity id="slidebar" geometry="primitive: box; width: 1.8; depth: 0.1; height: 0.1" position="0 1.3 -1" rotation="-5 0 0" material="color: #E7CA18"></a-entity>
+            <a-entity id="knob" geometry="primitive: cylinder; height: 0.15; radius: 0.1" position="0 1.3 -1" rotation="-95 0 0 " material="color: #334EFF"></a-entity>
+            <a-entity id="btn1" geometry="primitive: box; width: 0.5; depth: 0.1; height: 0.25" position="0 1.8 -1" rotation="-5 0 0" material="color: #334EFF"
+            event-set__enter="_event: mouseenter; color: #8FF7FF" event-set__leave="_event: mouseleave; color: #334EFF"></a-entity>
+            <a-entity id="btn2" geometry="primitive: box; width: 0.5; depth: 0.1; height: 0.25" position="0.65 1.8 -1" rotation="-5 0 0" material="color: #334EFF"></a-entity>
+            <a-entity id="btn3" geometry="primitive: box; width: 0.5; depth: 0.1; height: 0.25" position="-0.65 1.8 -1" rotation="-5 0 0" material="color: #334EFF"></a-entity>
             <a-entity oculus-quest-controls="hand: left" movement-controls></a-entity>
             <a-entity laser-controls="hand: left"></a-entity>
             <a-entity laser-controls="rightHand: right"></a-entity>
             <a-entity oculus-quest-controls="hand: right"></a-entity>
-            <a-camera wasd-controls-enabled="true"></a-camera>
+            <a-camera position="0 1.6 0" wasd-controls-enabled="true"></a-camera>
             <a-sky src="#sky" transparrent="true" hide-on-enter-ar="true"></a-sky>
             <a-plane src="#ground" repeat="100 100" height="100" width="100" rotation="-90 0 0" transparrent="true" hide-on-enter-ar="true"></a-plane>
 <!--Text-->
-            <a-text id="menu" value="Menu" color="white" tab-size="50" position="-0.3 3.5 -3.6"></a-text>
+            <a-text id="menu" value="Menu" color="white" tab-size="50" position="-0.3 3 -2"></a-text>
 <!--Hand Controls (Controls not working only see controllers)-->
-            <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity>
-            <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
-            <a-entity oculus-touch-controls="hand: left"></a-entity>
+            <a-entity id="rig"></a-entity>
+            <a-entity oculus-touch-controls="hand: left" oculus-thumbstick-controls></a-entity>
             <a-entity oculus-touch-controls="hand: right"></a-entity>
             <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
             <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
-            <a-entity laser-controls raycaster="lineColor: red; lineOpacity: 1">
      </a-scene>
     </body>
 </html>
